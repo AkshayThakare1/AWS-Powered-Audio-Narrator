@@ -47,7 +47,7 @@ Convenience: Allows users to listen to articles or books while multitasking, suc
         }
     ]
 }
-```
+
 * Step 4: Create a Subscription 
 * Step 5: Create a Lambda Function (Lambda Function Name: ImageUploadProcessor) 
 * Step 6: Add S3 trigger 
