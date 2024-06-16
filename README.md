@@ -4,13 +4,13 @@
 
 The Blog/Book Narrator project leverages AWS services to convert text files (such as blog posts, articles, newsletters, or book excerpts) into speech. This is particularly useful for creating audio versions of written content, making it accessible to a wider audience, including those who prefer listening over reading.
 
-Use Cases: \
+Use Cases: 
 
 Content Accessibility: Provides audio versions of written content for visually impaired users. \
 Learning: Enables users to listen to educational materials, enhancing learning experiences. \
 Content Distribution: Offers 
 an additional medium for content consumption, increasing engagement. \
-Convenience: Allows users to listen to articles or books while multitasking, such as during commutes or workouts. \
+Convenience: Allows users to listen to articles or books while multitasking, such as during commutes or workouts. 
 
 ### Project Architecture:
 
@@ -20,7 +20,7 @@ Convenience: Allows users to listen to articles or books while multitasking, suc
 
 * Step 1: Set Up an AWS Account 
 * Step 2: Create two S3 Buckets (Source S3 Bucket Name: amc-polly-source-bucket, Destination S3 Bucket Name: amc-polly-destination-bucket) 
-* Step 3: Create an IAM Policy (IAM Policy Name: amc-polly-lambda-policy)
+* Step 3: Create an IAM Policy (IAM Policy Name: amc-polly-lambda-policy) \
   Policy Defination:
 
   ```bash
@@ -46,19 +46,17 @@ Convenience: Allows users to listen to articles or books while multitasking, suc
             "Resource": "*"
         }
     ]
-}
+  }
 
-* Step 4: Create a Subscription 
-* Step 5: Create a Lambda Function (Lambda Function Name: ImageUploadProcessor) 
-* Step 6: Add S3 trigger 
+* Step 4: Create an IAM Role (IAM Role Name: amc-polly-lambda-role) and attach amc-polly-lambda-policy and AWSLambdaBasicExecutionRole Policies
+* Step 5: Create and Configure the Lambda Function (Lambda Function Name: TextToSpeechFunction)
+  - Set the runtime to Python 3.8.
+  - Set the execution role with necessary permissions for S3 and Polly. (Step 4)
+  - Add Environment Variables (`SOURCE_BUCKET`: Name of your source S3 bucket and `DESTINATION_BUCKET`: Name of your destination S3 bucket.
+* Step 6: Configure S3 Event Notification
+  - Set up an event notification in the source S3 bucket to trigger the Lambda function on new object creation events with the `.txt` suffix.
 * Step 7: Write Lambda Function Code 
 * Step 8: Test the System
-
-### Expected Outcome:
-
-By following these steps, you will have created a simple event-driven application on AWS that demonstrates the core principles of EDA. This setup can be expanded to more complex scenarios as you become more comfortable with the architecture and AWS services. If you need further assistance or have any questions, feel free to ask!
-
-This project will help you improve your skills in cloud computing, serverless architecture, and AWS services.
 
 Link to the video tutorial: 
 
