@@ -58,9 +58,3 @@ Convenience: Allows users to listen to articles or books while multitasking, suc
 * Step 7: Write Lambda Function Code 
 * Step 8: Test the System
 
-Link to the video tutorial: 
-
-Follow our tutorials here: https://www.youtube.com/@amonkincloud/videos \
-Follow my personal blog here:https://dev.to/yeshwanthlm/ \
-Follow us on Instagram: https://www.instagram.com/amonkincloud/ \
-For queries write to us at: amonkincloud@gmail.com 
